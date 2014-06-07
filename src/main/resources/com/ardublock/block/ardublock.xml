@@ -4665,6 +4665,64 @@
 			</Images>
 		</BlockGenus>
 
+		<!-- Qomo Liao's BlockGenus -->
+		<BlockGenus name="qm_digital_push_button" kind="data" color="179 43 213" initlabel="bg.df_digital_push_button">
+			<BlockConnectors>
+				<BlockConnector connector-type="boolean" connector-kind="plug" />
+				<BlockConnector connector-type="number" connector-kind="socket" label="bc.pin_number">
+					<DefaultArg genus-name="number" label="1" />
+				</BlockConnector>
+			</BlockConnectors>
+			<Images>
+				<Image>
+					<FileLocation>com/ardublock/block/dfrobot/dfr0029.png</FileLocation>
+				</Image>
+			</Images>
+		</BlockGenus>
+
+		<BlockGenus name="qm_l298n" kind="command" color="179 43 213" initlabel="bg.me_motordriver">
+			<description>
+				<text>L298N DC Motor Driver</text>
+			</description>
+			<BlockConnectors>
+				<BlockConnector connector-type="number" connector-kind="socket" label="bc.speed_L">
+					<DefaultArg genus-name="number" label="0" />
+				</BlockConnector>
+				<BlockConnector connector-type="number" connector-kind="socket" label="bc.speed_R">
+					<DefaultArg genus-name="number" label="0" />
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="qm_l298n_setup" kind="command" color="179 43 213" initlabel="bg.me_motordriver">
+			<description>
+				<text>L298N DC Motor Driver Setup</text>
+			</description>
+			<BlockConnectors>
+				<BlockConnector connector-type="number" connector-kind="socket" label="bc.speed_pin_L">
+					<DefaultArg genus-name="number" label="3" />
+				</BlockConnector>
+				<BlockConnector connector-type="number" connector-kind="socket" label="bc.left_motor_pin1">
+					<DefaultArg genus-name="number" label="2" />
+				</BlockConnector>
+				<BlockConnector connector-type="number" connector-kind="socket" label="bc.left_motor_pin2">
+					<DefaultArg genus-name="number" label="4" />
+				</BlockConnector>
+				<BlockConnector connector-type="number" connector-kind="socket" label="bc.speed_pin_R">
+					<DefaultArg genus-name="number" label="5" />
+				</BlockConnector>
+				<BlockConnector connector-type="number" connector-kind="socket" label="bc.right_motor_pin1">
+					<DefaultArg genus-name="number" label="6" />
+				</BlockConnector>
+				<BlockConnector connector-type="number" connector-kind="socket" label="bc.right_motor_pin2">
+					<DefaultArg genus-name="number" label="7" />
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<!-- <BlockGenus name="qm_IRread" kind="command" color="179 43 213" initlabel="bg.">
+			<description><text>IRread
+		</BlockGenus -->>
+
+
 	</BlockGenuses>
 
 	<BlockFamilies>
@@ -5095,6 +5153,13 @@
 			    <BlockGenusMember>insectbot_turn_left</BlockGenusMember>
 			    <BlockGenusMember>insectbot_blink_led</BlockGenusMember>
 			</BlockDrawer>
+
+			<BlockDrawer button-color="179 43 213" name="bd.qomo">
+				<!-- <BlockGenusMember>qm_digital_push_button</BlockGenusMember> -->
+				<BlockGenusMember>qm_l298n_setup</BlockGenusMember>
+				<BlockGenusMember>qm_l298n</BlockGenusMember>
+			</BlockDrawer>
+
 			
 			<!--
 			<BlockDrawer button-color="135 206 235" name="bd.linksprite_LinkerKit">
