@@ -4718,9 +4718,15 @@
 				</BlockConnector>
 			</BlockConnectors>
 		</BlockGenus>
-		<!-- <BlockGenus name="qm_IRread" kind="command" color="179 43 213" initlabel="bg.">
-			<description><text>IRread
-		</BlockGenus -->>
+		<BlockGenus name="qm_irread" kind="data" color="179 43 213" initlabel="bg.qm_irread">
+			<description><text>IRread</text></description>
+			<BlockConnectors>
+				<BlockConnector connector-type="number" connector-kind="socket" label="bc.pin_number">
+					<DefaultArg genus-name="number" label="11" />
+				</BlockConnector>
+				<BlockConnector connector-type="number" connector-kind="plug" />
+			</BlockConnectors>
+		</BlockGenus>
 
 
 	</BlockGenuses>
@@ -5158,6 +5164,7 @@
 				<!-- <BlockGenusMember>qm_digital_push_button</BlockGenusMember> -->
 				<BlockGenusMember>qm_l298n_setup</BlockGenusMember>
 				<BlockGenusMember>qm_l298n</BlockGenusMember>
+				<BlockGenusMember>qm_irread</BlockGenusMember>
 			</BlockDrawer>
 
 			
