@@ -21,13 +21,19 @@ public class IRread extends TranslatorBlock {
 		String number = translatorBlock.toCode();
 		String defpin = "int RECV_PIN" + number + " = " + number + ";";
 		translator.addDefinitionCommand(defpin);
+		// translator.addDefinitionCommand("ISDC"+number+";");
 		translator.addDefinitionCommand("IRrecv irrecv" + number + "(RECV_PIN" + number + ");");
 		translator.addDefinitionCommand("decode_results " + "ir_results" + number +";");
 		translator.addSetupCommand("irrecv"+number+".enableIRIn();");
 		String ARDUBLOCK_IR_READ_DEFINE = 
-		"\nint __ardublockIRread"+number+"()\n" + 
-		"{	irrecv" + number + ".decode(&ir_results" + number + ");\n" +
-		"	return ir_results" + number + ".value;\n}";
+		"\nunsigned long __ardublockIRread"+number+"()\n" + 
+		"{	int isdecode = irrecv" + number + ".decode(&ir_results" + number + ");\n" +
+		"	unsigned long irdata = ir_results" + number + ".value;\n" +
+		"	if(isdecode){\n" +
+		"		irrecv" + number + ".resume();\n" +
+		"		return irdata;\n}\n" +
+		"	else\n" +
+		"		return 0;\n}";
 		translator.addDefinitionCommand(ARDUBLOCK_IR_READ_DEFINE);
 
 		String ret = "__ardublockIRread"+number+"()";
