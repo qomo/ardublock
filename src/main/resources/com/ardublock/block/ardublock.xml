@@ -4666,24 +4666,15 @@
 		</BlockGenus>
 
 		<!-- Qomo Liao's BlockGenus -->
-		<BlockGenus name="qm_digital_push_button" kind="data" color="179 43 213" initlabel="bg.df_digital_push_button">
-			<BlockConnectors>
-				<BlockConnector connector-type="boolean" connector-kind="plug" />
-				<BlockConnector connector-type="number" connector-kind="socket" label="bc.pin_number">
-					<DefaultArg genus-name="number" label="1" />
-				</BlockConnector>
-			</BlockConnectors>
-			<Images>
-				<Image>
-					<FileLocation>com/ardublock/block/dfrobot/dfr0029.png</FileLocation>
-				</Image>
-			</Images>
-		</BlockGenus>
-
-		<BlockGenus name="qm_l298n" kind="command" color="179 43 213" initlabel="bg.me_motordriver">
+		<BlockGenus name="qm_l298n" kind="command" color="205 133 63" initlabel="bg.me_motordriver">
 			<description>
 				<text>L298N DC Motor Driver</text>
 			</description>
+			<Images>
+				<Image>
+					<FileLocation>com/ardublock/block/qomoliao/L298N.png</FileLocation>
+				</Image>
+			</Images>
 			<BlockConnectors>
 				<BlockConnector connector-type="number" connector-kind="socket" label="bc.speed_L">
 					<DefaultArg genus-name="number" label="0" />
@@ -4693,10 +4684,15 @@
 				</BlockConnector>
 			</BlockConnectors>
 		</BlockGenus>
-		<BlockGenus name="qm_l298n_setup" kind="command" color="179 43 213" initlabel="bg.me_motordriver">
+		<BlockGenus name="qm_l298n_setup" kind="command" color="205 133 63" initlabel="bg.me_motordriver">
 			<description>
 				<text>L298N DC Motor Driver Setup</text>
 			</description>
+			<Images>
+				<Image>
+					<FileLocation>com/ardublock/block/qomoliao/L298N.png</FileLocation>
+				</Image>
+			</Images>
 			<BlockConnectors>
 				<BlockConnector connector-type="number" connector-kind="socket" label="bc.speed_pin_L">
 					<DefaultArg genus-name="number" label="3" />
@@ -4718,7 +4714,7 @@
 				</BlockConnector>
 			</BlockConnectors>
 		</BlockGenus>
-		<BlockGenus name="qm_irread" kind="data" color="179 43 213" initlabel="bg.qm_irread">
+		<BlockGenus name="qm_irread" kind="data" color="205 133 63" initlabel="bg.qm_irread">
 			<description><text>IRread</text></description>
 			<BlockConnectors>
 				<BlockConnector connector-type="number" connector-kind="socket" label="bc.pin_number">
@@ -4727,7 +4723,59 @@
 				<BlockConnector connector-type="number" connector-kind="plug" />
 			</BlockConnectors>
 		</BlockGenus>
-
+		<BlockGenus name="qm_l9110_setup" kind="command" color="205 133 63" initlabel="bg.qm_l9110_setup">
+			<description>
+				<text>L9110 Motor Driver Setup</text>
+			</description>
+			<Images>
+				<Image>
+					<FileLocation>com/ardublock/block/qomoliao/L9110.png</FileLocation>
+				</Image>
+			</Images>
+			<BlockConnectors>
+				<BlockConnector connector-type="number" connector-kind="socket" label="bc.left_motor_pin1">
+					<DefaultArg genus-name="number" label="6" />
+				</BlockConnector>
+				<BlockConnector connector-type="number" connector-kind="socket" label="bc.left_motor_pin2">
+					<DefaultArg genus-name="number" label="9" />
+				</BlockConnector>
+				<BlockConnector connector-type="number" connector-kind="socket" label="bc.right_motor_pin1">
+					<DefaultArg genus-name="number" label="10" />
+				</BlockConnector>
+				<BlockConnector connector-type="number" connector-kind="socket" label="bc.right_motor_pin2">
+					<DefaultArg genus-name="number" label="11" />
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="qm_l9110" kind="command" color="205 133 63" initlabel="bg.qm_l9110">
+			<description>
+				<text>L9110 Motor Driver</text>
+			</description>
+			<Images>
+				<Image>
+					<FileLocation>com/ardublock/block/qomoliao/L9110.png</FileLocation>
+				</Image>
+			</Images>
+			<BlockConnectors>
+				<BlockConnector connector-type="number" connector-kind="socket" label="bc.speed_L">
+					<DefaultArg genus-name="number" label="0" />
+				</BlockConnector>
+				<BlockConnector connector-type="number" connector-kind="socket" label="bc.speed_R">
+					<DefaultArg genus-name="number" label="0" />
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="touch-sensor" kind="data" color="205 133 63" initlabel="bg.touch-sensor">
+			<description>
+				<text>Touch sensor</text>
+			</description>
+			<BlockConnectors>
+				<BlockConnector connector-type="number" connector-kind="socket" label="#">
+					<DefaultArg genus-name="number" label="6" />
+				</BlockConnector>
+				<BlockConnector connector-type="number" connector-kind="plug" />
+			</BlockConnectors>
+		</BlockGenus>
 
 	</BlockGenuses>
 
@@ -4959,6 +5007,12 @@
 			<BlockDrawer button-color="205 133 63" name="bd.utilities" type="factory">
 				<BlockGenusMember>servo_default</BlockGenusMember>
 				<BlockGenusMember>ultrasonic</BlockGenusMember>
+				<BlockGenusMember>touch-sensor</BlockGenusMember>
+				<BlockGenusMember>qm_l9110_setup</BlockGenusMember>
+				<BlockGenusMember>qm_l9110</BlockGenusMember>
+				<BlockGenusMember>qm_l298n_setup</BlockGenusMember>
+				<BlockGenusMember>qm_l298n</BlockGenusMember>
+				<BlockGenusMember>qm_irread</BlockGenusMember>
 				<BlockGenusMember>LCD_I2C_Sainsmart_20by4</BlockGenusMember>
 				<BlockGenusMember>LCD_command_lightOff</BlockGenusMember>
 				<BlockGenusMember>LCD_PLL_Sainsmart_16by2</BlockGenusMember>
@@ -5001,7 +5055,7 @@
 				<BlockGenusMember>code_setup</BlockGenusMember>
 				<BlockGenusMember>code_loop</BlockGenusMember>
 			</BlockDrawer>
-			<BlockDrawer button-color="13 152 164" name="bd.tinkerkit" type="factory">
+ 			<BlockDrawer button-color="13 152 164" name="bd.tinkerkit" type="factory">
 				<BlockGenusMember>Tinker_LED</BlockGenusMember>
 				<BlockGenusMember>Tinker_LED_pwm</BlockGenusMember>
 				<BlockGenusMember>Tinker_Button</BlockGenusMember>
@@ -5160,12 +5214,11 @@
 			    <BlockGenusMember>insectbot_blink_led</BlockGenusMember>
 			</BlockDrawer>
 
-			<BlockDrawer button-color="179 43 213" name="bd.qomo">
-				<!-- <BlockGenusMember>qm_digital_push_button</BlockGenusMember> -->
+<!-- 			<BlockDrawer button-color="179 43 213" name="bd.qomo">
 				<BlockGenusMember>qm_l298n_setup</BlockGenusMember>
 				<BlockGenusMember>qm_l298n</BlockGenusMember>
 				<BlockGenusMember>qm_irread</BlockGenusMember>
-			</BlockDrawer>
+			</BlockDrawer> -->
 
 			
 			<!--
